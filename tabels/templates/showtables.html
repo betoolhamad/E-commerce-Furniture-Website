@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container-fluid">
+        <!-- First section Background image -->
+        <div class="row m-0 p-0">
+          <div class="col fluid p-0">
+  
+            <!-- Background image -->
+            <div
+              class="bg-image"
+              style="
+              background-image:
+              url('https://i.ebayimg.com/images/g/dZoAAOSwR85jdJsp/s-l1200.jpg'); height: 75vh; background-repeat: no-repeat; background-size: cover;
+              ">
+  
+              <div class="text-center">
+                  <div class="d-flex justify-content-center align-items-center" style="height: 75vh; ">
+                    <h1 class="text-black" style="font-weight: 700">Tables</h1>
+                  </div>
+              </div>
+  
+            </div>
+    </div>
+
+
+    
+    <div class="container ">
+        {%for item in tabels%} 
+        <!-- Chairs we got from backend -->
+        <div class="row mt-5 d-flex justify-content-center text-center">
+            <div class="col-sm-8">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row ">
+                            <div class="col-sm-3">
+                                <img src="../static/images/{{item.image}}" class="img-thumbnail">
+                            </div>
+                            <div class="col-sm-9">
+                                <ul class="list-unstyled text-start">
+                                    <li><h4 class="alert alert-secondary ">{{item.itemid.name}}</h4></li> <!-- read name from item table by the shared column which is itemid because in the 
+                                    function in viwes.py we start querey with itemdetails  -->
+                                    <li><strong >{{item.price}} SR </strong></li>
+                                  </ul>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                  <a href="{% url 'detailsTable' id=item.id %}" class="btn btn-secondary">Product  Details </a>
+
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        {%endfor%}
+    </div>
+
+
+
+{% endblock %}

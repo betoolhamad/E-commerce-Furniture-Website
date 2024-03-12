@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}  
+    {%load static%}
+    <title>B-Furniture</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+
+
+    <style>
+    body {
+       background-color:#edebeb;
+       font-family: Georgia, Times, 'Times New Roman', serif;
+       margin: 0;
+       padding: 0;
+       overflow-x: hidden;
+    }
+
+    html {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* This prevents horizontal scrolling */ 
+     }
+
+    
+    
+    .navbar {
+        background-color: white;
+        font-size: 18px;
+
+    }
+
+    .navbar-brand {
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 24px;
+
+  
+       
+    }
+
+    .navbar-brand img {
+        border-radius: 50%;
+    }
+
+    .navbar-brand:hover {
+        color: rgba(66, 66, 66, 0.469);
+
+    }
+
+    .nav-link {
+        color: black;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .nav-link:hover {
+        color: rgba(162, 154, 154, 0.469);
+        transform: scale(1.2);
+
+    }
+
+    .fa-brands {
+        color: black;
+
+    }
+
+    .footer {
+        background-color: white;
+        color: black;
+        font-size: 18px;
+    }   
+
+    
+    /* index style crousal */
+    .container-fluid {
+        padding: 0;
+    }
+
+    
+
+    .pagetitle {
+        font-weight: 600;
+        margin-top: 100px;
+        margin-bottom: 80px;
+
+        /* color: rgba(37, 37, 37, 0.469); */
+        /* color: rgb(170, 170, 170); */
+
+    }
+
+    .card1 {
+        transition: transform 0.4s ease-in-out;
+        border-style: solid;
+        border-color:  rgb(199, 199, 199);
+        box-shadow: #3e3e3e;
+        border-radius: 5px;
+        
+    }
+
+    .card1:hover {
+        color: rgba(162, 154, 154, 0.469);
+        transform: scale(1.1);   
+    }
+
+
+    .map {
+    width: 100%;
+    height: 100%;
+    float: center;
+    padding: 80px;
+    margin-bottom: 60px;
+    box-shadow: 0 10px 30px -10px black;
+    background: rgb(228, 228, 228);
+    }
+
+
+    .map-c {
+    float: center;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    box-sizing: border-box
+    }
+
+    h1 {
+    margin: 0;
+    font-weight: normal;
+    color: rgb(60, 60, 70);
+    font-size: 28px
+    }
+
+    p {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 30px
+    }
+
+    i {
+    float: left;
+    margin: 0 8px 0 0
+    }
+
+
+    @media only screen and (max-width: 720px) {
+    .map {
+        height: 450px;
+        margin: calc(50vh - 225px) auto;
+        overflow: hidden
+    }
+    #map {
+        width: 100%;
+        height: 200px;
+    }
+    .map-c {
+        float: right;
+        width: 100%;
+    }
+    button {
+        float: right;
+        margin-top: -75px
+    }
+    }
+
+    @media only screen and (max-width: 460px) {
+    p {
+        display: none
+    }
+    h1 {
+        margin-bottom:20px
+    }
+    button {
+        float: none;
+        margin-top: 10px
+    }
+    .det {
+        margin-bottom: 9px
+    }
+    }
+
+    .btndetails:hover {
+        background-color: rgba(162, 154, 154, 0.469);
+        color : black;
+    }
+
+    /* .btnlogout {
+        color: black;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .btnlogout {
+        color: rgba(162, 154, 154, 0.469);
+        transform: scale(1.2);
+
+    } */
+
+
+</style>
+</head>
+<body>
+
+    <header>
+        <!-- <nav class="navbar navbar-secondary fixed-top"> -->
+           <nav class="navbar navbar-secondary">
+            <div class="container">
+                <a class="navbar-brand" href="{%url 'home'%}" class="d-inline-block align-text-center"> &nbsp; B-Furniture</a>
+
+                <div>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section0">Home</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#section1">Products</a> </li>
+                        <li class="nav-item"><a class="nav-link" href="#section2">Blogs</a> </li>
+                        <li class="nav-item"><a class="nav-link" href="#section3">Services</a> </li>
+                        <li class="nav-item"><a class="nav-link" href="#section4">Contact us</a> </li>
+
+                    </ul>
+
+                </div>
+
+                <div>
+                    <ul class="list-inline m-2">
+
+                        <li class="list-inline-item">
+                            {% if request.user.is_authenticated %}
+                            <table class="table table-borderless m-2">
+                                <tr>
+                                    <td>
+                                        <span class="text-dark " style="font-size:16px"> Welcome {{ user.username }}</span>
+                                    </td>
+                                    <td class="pt-1">
+                                       <form action="{%url 'auth_logout' %}" method="post">
+                                         <button class="btnlogout btn btn-link text-dark" style="font-size:16px; text-decoration:none;">Logout</button>
+                                        </form>
+                                    </td>
+
+                                    <td>
+                                        <li class="list-inline-item pb-2">
+                                            <span class="badge rounded-pill badge-notification bg-danger" style="font-size:12px">{{request.session.countcart}}</span>
+                                            <a href=""><i class="fa-solid fa-cart-shopping text-secondary pt-2 " style="font-size:18px;"></i></a>
+                                        </li>
+                                    </td>
+
+                                    <td>
+                                        <a
+                                    data-mdb-dropdown-init
+                                    class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                                    href="#"
+                                    id="navbarDropdownMenuAvatar"
+                                    role="button"
+                                    aria-expanded="false"
+                                  >
+                                    <img
+                                      src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                                      class="rounded-circle"
+                                      height="25"
+                                      alt="Black and White Portrait of a Man"
+                                      loading="lazy"
+                                    />
+                                  </a>
+                                      </td>
+                                </tr>
+                            </table>
+                            {% else %}
+                            <!-- WHEN USER NOT LOGIN YET -->
+                            <table class="table table-borderless m-0">
+                                <tr>
+                                  
+                                
+                                  <td >
+                                    <p class="m-3"><a href="{%url 'auth_login'%}" style="text-decoration:none;"><span class="text-dark" style="font-size:16px;">Login</span></a></p> 
+                                 </td>
+                                  <td>
+                                    <p class="text m-3"><a href="{%url 'auth_register'%}" style="text-decoration:none;"><span class="text-dark" style="font-size:16px;">Register</span></a></p> 
+                                 </td>
+
+                                 <td>
+                                    <li class="list-inline-item p-2 mt-1">
+                                        <span class="badge rounded-pill badge-notification bg-danger" style="font-size:10x">0</span>
+                                        <a href=""><i class="fa-solid fa-cart-shopping text-secondary pt-2 " style="font-size:18px;"></i></a>
+                                    </li>
+                                  </td>
+                               
+                                </tr>
+                              </table>
+
+                            {% endif %}
+
+                        </li>
+
+                    
+               
+
+
+                    
+
+                        
+
+                    </ul>
+                </div>
+
+
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    {% block content %} 
+                        <!-- inherete main content of landing page code from index.html page -->
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer text-center text-lg-start p-3">
+    <!-- footer section of layout -->
+      
+            <div class="text-center p-3 ">
+                Copyright reserved © 2024 - Best Furniture 
+            </div>
+    </footer>
+
+</body>
+</html>

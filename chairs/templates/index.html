@@ -1,0 +1,241 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container-fluid">
+      <!-- First section Background image -->
+      <div class="row m-0">
+        <div class="col fluid p-0">
+
+          <!-- Background image -->
+          <div id="section0"
+            class="bg-image"
+            style="
+            background-image:
+            url('https://i0.wp.com/www.theweddingvowsg.com/wp-content/uploads/2022/04/noteworthy-furniture-shops-in-the-philippines-featured-photo-1-1-1.jpg?fit=1200%2C674&ssl=1'); height: 100vh; background-repeat: no-repeat; background-size: cover;
+            ">
+
+            <div class="text-center">
+                <div class="d-flex justify-content-center align-items-center" style="height: 120vh; ">
+                  <h1 class="text-black" style="font-weight: 700">STYLISH FURNITURE IN UNIQUE STYLE</h1>
+                </div>
+            </div>
+
+          </div>
+          <!-- End Background image -->
+
+          <!-- <div id="carouselExampleCaptions" class="carousel slide"
+            data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="https://i0.wp.com/www.theweddingvowsg.com/wp-content/uploads/2022/04/noteworthy-furniture-shops-in-the-philippines-featured-photo-1-1-1.jpg?fit=1200%2C674&ssl=1"
+                  class="d-block w-100" alt="First furniture slide">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>STYLISH FURNITURE IN UNIQUE STYLE</h5>
+                </div>
+              </div>
+
+
+              <div class="carousel-item">
+                <img
+                  src="https://bucket-api.domain.com.au/v1/bucket/image/2018253860_1_1_221213_071751-w800-h400"
+                  class="d-block w-100" alt="Second furniture slide">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Far far away, behind the word mountains, far from the
+                    countries its online!
+                  </h5>
+                </div>
+              </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button"
+              data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-control-next" type="button"
+              data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div> -->
+        </div>
+      </div>
+   
+      <!-- Second section product image --> 
+      <h1 class="pagetitle text-center" id="section1"> PRODUCTS</h1>
+      <div class="row m-5">
+        <div class="col-sm-4 p-4">
+          <div class="card1">
+            <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+              <img src="https://templatekit.jegtheme.com/funiture/wp-content/uploads/sites/18/2020/11/JD46ETY@2x.jpg"  class="img-fluid"/>
+              <a href="!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body text-center m-2">
+              <h5 class="card-title" >Chairs</h5>
+              <p class="card-text">luxury sofas, lounge sofas and many collections of chairs.</p>
+              <a href="{% url 'showchairs'%}" class="btn btn-secondary" data-mdb-ripple-init>Shop now</a>
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- --------Second card-------- -->
+        <div class="col-sm-4 p-4">
+          <div class="card1">
+            <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+              <img src="https://templatekit.jegtheme.com/funiture/wp-content/uploads/sites/18/2020/11/J7ZW2XK@2x.jpg" class="img-fluid"/>
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body text-center m-2">
+              <h5 class="card-title">Tables</h5>
+              <p class="card-text">Coffe table, styday table and many collections of tables.</p>
+              <a href="{% url 'showtables'%}" class="btn btn-secondary" data-mdb-ripple-init>Shop now</a>
+            </div>
+          </div>
+          
+        </div>
+
+      <!-- --------Thirs card-------- -->
+
+        <div class="col-sm-4 p-4">
+          <div class="card1">
+            <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+              <img src="https://templatekit.jegtheme.com/funiture/wp-content/uploads/sites/18/2020/11/XFSNSK@2x.jpg" class="img-fluid"/>
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body text-center m-2">
+              <h5 class="card-title">Accessorise</h5>
+              <p class="card-text">Deco lamp, table lamp and many collection of accessories.</p>
+              <a href="#!" class="btn btn-secondary" data-mdb-ripple-init>Shop now</a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+
+      <!-- Third section blog -->
+      
+      <div class="bg-light py-xl-4">
+        <h1 class="pagetitle text-center" id="section2"> BLOGS</h1>
+        <div class="container card p-4">
+          <div class="row mg-5">
+            <div class="col-12">
+              <div class="row align-items-center gy-3 gy-md-0 gx-xl-5">
+                <div class="col-xs-12 col-md-6">
+                  <div class="img-wrapper position-relative hcf-transform">
+                    <a href="#!">
+                      
+                      <img class="img-fluid rounded w-100 hcf-of-cover hcf-op-center hcf-ih-250 hcf-ih-md-400" loading="lazy" src="https://templatekit.jegtheme.com/funiture/wp-content/uploads/sites/18/2020/11/poster-above-cupboard-with-plant-in-white-living-room-interior-w.jpg" alt="">
+                    </a>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <div>
+                    <p class="text-secondary mb-1">March 2024</p>
+                    <h2 class="h1 mb-3"><a class="link-dark text-decoration-none" href="#!">Useful Skateboarding Tips For Beginners</a></h2>
+                    <p class="mb-4">Learning how to skateboard can be a simultaneously exciting and terrifying experience. Explore the 20 top tips for beginner skaters.</p>
+                    <a class="btn btn-primary" href="#!" target="_self">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+         </div>
+        </div>
+
+
+      
+          <!-- Third section blog
+          <h1 class="pagetitle text-center" id="section3"> SERVICES</h1>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="list-icon">
+                  <i class="fas fa-shipping-fast" style="font-size:24px"></i>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+      <h1 class="pagetitle text-center" id="section3"> CONTACT US</h1>
+      <div class="container white ">
+        <div class="row"></div>
+          <div class="map">
+            <div id="map"></div>
+            <div class="map-c" id="section3">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium id cumque est dolores voluptatibus.</p>
+              <div class="det"><i class="fa fa-map-marker"></i> 102 New Road, New City</div>
+              <div class="det"><i class="fa fa-phone"></i> 001 2045 509</div>
+              <div class="det"><i class="fa fa-globe"></i> www.abcstores.com</div>
+          
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+
+
+   </div>
+
+      
+   
+      <!-- <div class="grid">
+        <div class="card card__one">
+          <figure class="card__img">
+            <img src="https://res.cloudinary.com/jasonheecs/image/upload/v1479748567/card-hover/photo-1.jpg" width="340" height="280" />
+          </figure>
+          <div class="card__desc">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, tempora.
+          </div>
+        </div>
+
+        <div class="card card__one">
+          <figure class="card__img">
+            <img src="https://res.cloudinary.com/jasonheecs/image/upload/v1479748567/card-hover/photo-1.jpg" width="340" height="280" />
+          </figure>
+          <div class="card__desc">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, tempora.
+          </div>
+        </div>
+
+        <div class="card card__one">
+          <figure class="card__img">
+            <img src="https://res.cloudinary.com/jasonheecs/image/upload/v1479748567/card-hover/photo-1.jpg" width="340" height="280" />
+          </figure>
+          <div class="card__desc">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, tempora.
+          </div>
+        </div> -->
+
+      <!-- </div> -->
+
+	
+  
+
+
+ 
+      
+
+
+
+
+{% endblock %}

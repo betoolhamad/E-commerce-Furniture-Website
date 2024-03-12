@@ -1,0 +1,87 @@
+{% extends 'base.html' %} 
+ 
+{% block content %} 
+    <div class="container m-5" style="background-color:white;">
+        <!-- content -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row gx-5">
+                    <aside class="col-lg-6">
+                     {%for item in table%}
+                        <div class="d-flex justify-content-center mb-3 m-4">
+                            <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" href="" class="item-thumb">
+                                <img width="600" height="500" class="rounded-2" src="/static/images/{{item.image}}" />
+                            </a>
+                        </div>
+                            <!-- thumbs-wrap.// -->
+                            <!-- gallery-wrap .end// -->
+                    </aside>
+                    
+                    <main class="col-lg-6">
+                            <div class="ps-lg-3">
+                            <h3 class="py-3" style="color: rgba(41, 38, 38, 0.469); font-weight: 600; ">Product Details
+                            </h3>
+                            <h4 class="title text-dark">
+                                {{item.itemid.name}}
+                            </h4>
+                            <div class="d-flex flex-row my-3">
+                                <div class="text-success mb-1 me-2" style="font-weight: bold;">
+                                    <span class="ms-1"> Only&nbsp;
+                                       {{item.qty}}
+                                    </span>
+                                    <span class="text-success ms-2">In stock</span>
+                                </div>
+                                
+                            </div>
+
+                            <div class="mb-3">
+                                <span class="h5">{{item.price}}</span>
+                                <span class="text-muted">SR</span>
+                            </div>
+
+                            <p>
+                                Modern look and quality demo item is a modern-inspired collection that continues to break away from the conventions of mainstream furniture.
+                                men.
+                            </p>
+
+                            <div class="row">
+
+                                <dt class="col-4">Color</dt>
+                                <dd class="col-8">{{item.color}}</dd>
+
+                                <dt class="col-4">Total with taxes:</dt>
+                                <dd class="col-8">{{item.total}}</dd>
+
+                            </div>
+
+                        <hr />
+
+                        <div class="row mb-4">
+                            <!-- col.// -->
+                            <div class="col-md-4 col-6 mb-3">
+                            <label class="mb-2 d-block">Quantity</label>
+                            <div class="input-group mb-3" style="width: 170px;">
+                                <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon1" data-mdb-ripple-color="dark">
+                                <i class="fas fa-minus"></i>
+                                </button>
+                                <input type="text" class="form-control text-center border border-secondary" placeholder="{{item.qty}}" aria-label="Example text with button addon" aria-describedby="button-addon1" />
+                                <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon2" data-mdb-ripple-color="dark">
+                                <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                            </div>
+                        </div>
+                        <a href="{%url 'checkout2' %}" class="btn btndetails btn-success shadow-0"> Buy now </a>
+                        <a href="{%url 'add_to_cart2' id=item.id %}" class="btn btndetails btn-primary shadow-0"> <i class="me-1 fa fa-shopping-basket"></i> Add to cart </a>
+                        </div>
+                    </main>
+                    {%endfor%}
+                </div>
+            </div>
+        </section>
+        <!-- content -->
+
+
+    </div>  
+
+  {% endblock %}

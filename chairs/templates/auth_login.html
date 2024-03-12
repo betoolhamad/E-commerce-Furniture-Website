@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="mt-5 ">
+        <form class="p-5 m-5 form-control form-group" method="post">
+            <h1 class="text-success" style="font-weight:bold">Login Form</h1>
+            {%csrf_token%}
+            {{form.as_p}}
+            <div class="pt-2">
+                <strong>You dont have an account!! <a href="{% url 'auth_register' %}"> register now</strong>
+             </div>
+            <button class="btn btn-success" type="submit">Login</button>
+        </form>
+    </div>
+{% endblock %}
